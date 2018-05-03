@@ -34,3 +34,4 @@ print(a.strip("c"))
 # 运行结果
 # 123abc
 # 23abc
+# 123ab

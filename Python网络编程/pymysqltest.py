@@ -65,14 +65,11 @@ try:
     # 执行 sql 语句
     #db_update_cursor.execute(sql)
     #
-    update_user_name = "49;delete from user"
+    update_user_name = "test"
     id = 49
-    #sql = "update user set user_name = 'dds' where id = %s" % (id)
-    #db_update_cursor.execute(sql)
-    #db_update_cursor.execute("update user set user_name = %s where id = 49", update_user_name)
     # 正确用法，可以有效的防止sql注入
-    db_update_cursor.execute("update user set user_name = %s where id = %s", (update_user_name, id))
-    print("执行")
+    db_update_cursor.execute("update user set `user_name` = %s where `id` = %s", (update_user_name, id))
+    print("执行成功")
     # 提交到数据库执行
     db_update.commit()
 except Exception as e:
